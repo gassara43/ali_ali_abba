@@ -4,7 +4,6 @@
 </p>
 <?php
 
-
 $Notes = array(10, 12, 8, 19, 3, 16, 11, 13, 9);
 echo "les notes obtenues par l'élève sont :";
 foreach($Notes as $element)
