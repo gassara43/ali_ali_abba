@@ -9,13 +9,13 @@
     {
         //STRTOUPPER nous permet de convertir une chaine de caractère en majuscule
         $textMaj = strtoupper($texteAconvertir);
-        echo '<style>
+                echo '<style>
                 p{ 
                     color :red;
                 }
     
               </style> 
-              <P>'. $textMaj.'</p>
+              <P>'. $textMaj.'</p>  
               ';
         
     }
