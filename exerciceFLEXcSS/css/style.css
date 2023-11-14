@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Source+Code+Pro:wght@300&display=swap');
+
+:root {
+    --padding: 20px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+main {
+    padding: var(--padding);
+}
+
+section {
+    width: 100%;
+    margin: 20px 0;
+    padding: var(--padding);
+    background: rgb(238, 238, 238);
+    border-radius: 8px;
+}
+section h3 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+section .content {
+    display: flex;
+    padding: var(--padding);
+    border: 1px solid #000;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#section1 .content {
+    justify-content: start;
+}
+#section2 .content {
+    justify-content: center;
+}
+#section3 .content {
+    justify-content: end;
+    flex-direction: row-reverse;
+}
+#section4 .content {
+    justify-content: space-between;
+}
+#section5 .content {
+    justify-content: space-around;
+}
+#section6 .content {
+    justify-content: space-evenly;
+}
+#section7 .content {
+    flex-direction: column;
+}
+#section8 .content {
+    flex-direction: column-reverse;
+    align-items: center;
+}
+#section9 .content {
+    flex-direction: column;
+    align-items: end;
+}
+#section10 .content .box {
+    flex-grow: 1;
+}
+#section11 .content .box:nth-child(1) {
+    flex-grow: 1;
+}
+#section12 .content {
+    flex-wrap: wrap;
+}
+#section13 .content {
+    gap: 0;
+    flex-wrap: wrap;
+}
+#section13 .content .box {
+    min-width: 25%;
+}
+#section14 .content {
+    flex-direction: column;
+}
+#section14 .content .box {
+    width: 100%;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 90px;
+    color: #fff;
+    box-shadow: rgba(38, 57, 77, 0.646) 0px 10px 50px -10px;
+    border-radius: 8px;
+    transition: 1s;
+}
+.box:hover {
+    transform: translateY(-5px);
+}
+.blue {
+    background: rgb(32,67,143);
+    background: linear-gradient(90deg, rgba(32,67,143,1) 0%, rgba(60,137,250,1) 100%);
+}
+.red {
+    background: rgb(209,54,41);
+    background: linear-gradient(90deg, rgba(209,54,41,1) 0%, rgba(250,60,67,1) 100%);
+}
+.green {
+    background: rgb(27,145,74);
+    background: linear-gradient(90deg, rgba(27,145,74,1) 0%, rgba(61,207,132,1) 100%);
+}
