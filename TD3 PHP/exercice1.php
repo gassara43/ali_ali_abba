@@ -40,13 +40,21 @@ class livres
         }
     public function afficherBibligraphie()
     {
-        echo $this->auteur->__toString();
+        
 
-        echo $this->titre."($this->anneeDparution) ".$this->nbPages. " pages / ".$this->prix;
+        echo $this->titre."($this->anneeDparution) ".$this->nbPages. " pages / ".$this->prix ." euros </br>";
     }
 
  }
 
  $autor = new Auteur('Stephen','King');
- $book = new livres('CA',1986,1138,20,$autor) ;
- $book->afficherBibligraphie();
+ echo $autor->__toString();
+
+ $book1 = new livres('CA',1986,1138,20,$autor) ;
+ $book1->afficherBibligraphie();
+$book2 =  new livres('Simitierre',1983,374,15,$autor) ;
+$book2->afficherBibligraphie();
+$book3 =  new livres('Le fléau',1978,823,14,$autor) ;
+$book3->afficherBibligraphie();
+$book4 =  new livres('Shinning',1977,447,16,$autor) ;
+$book4->afficherBibligraphie();
