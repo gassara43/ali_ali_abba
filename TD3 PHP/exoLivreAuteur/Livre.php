@@ -6,6 +6,7 @@ class Livre
     private int $nbPages;
     private int $anneeDparution;
     private float $prix;
+
     private Auteur $auteur;
 
     public function __construct(string $_titre,int $_anneeDparution,int $_nbPages,float $_prix,Auteur $_auteur)

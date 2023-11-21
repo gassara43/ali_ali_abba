@@ -16,6 +16,9 @@ class Auteur
         {
             return $this->_Prenom;
         }
+
+
+        
     public function setPrenom(string $prenom)
         {
             $this->_Prenom = $prenom;
