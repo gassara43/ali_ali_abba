@@ -1,20 +1,59 @@
 <?php
-class Film
+ class Film
 {
     private string $_Titre;
-    private DaTetime $_DatedSorti;
-    private int  $_Duree;
-    private Realisateur $realisateur;
-    private array array $roles =[];
+    private DateTime $_DateSortie;
+    private int $_Duree;
+    private Realisateur $_realisateur;
 
-    public function __construct(string  $Titre,string $DatedSorti ,DateTime $Duree,Realisateur $realisateur,array $role )
+    public function __construct(string $Titre, string $dateSortie, int $duree, Realisateur $realisateur)
     {
-        $this->_Nom = $Nom ;
-        $this->_Prenom = $Prenom ;
-        $this->_Sexe = $Sexe;
-        $this->_DateSortie = $Naissance;
-        $this->_ralisateur = $realisateur;
-        $this->_role = $role
+        $this->_Titre = $Titre;
+        $this->_DateSortie = new DateTime($dateSortie);
+        $this->_Duree = $duree;
+        $this->_realisateur = $realisateur;
     }
-    
+
+    public function getTitre()
+    {
+        return $this->_Titre;
+    }
+
+    public function setTitre(string $titre)
+    {
+        $this->_Titre = $titre;
+    }
+
+    public function getDateSortie()
+    {
+        return $this->_DateSortie;
+    }
+
+    public function setDateSortie(string $dateSortie)
+    {
+        $this->_DateSortie = new DateTime($dateSortie);
+    }
+
+    public function getDuree()
+    {
+        return $this->_Duree;
+    }
+
+    public function setDuree(int $duree)
+    {
+        $this->_Duree = $duree;
+    }
+
+    public function getRealisateur()
+    {
+        return $this->_realisateur;
+    }
+
+    public function setRealisateur(Realisateur $realisateur)
+    {
+        $this->_realisateur = $realisateur;
+    }
 }
+
+
+ 
