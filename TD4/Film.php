@@ -3,12 +3,12 @@
 class Film
 {
     private string $_titre;
-    private DateTime $_dateSortie;
+    private DateTime $_dateSortie; 
     private int $_duree;
     private Realisateur $_realisateur;
     private string $_synopsis;
     private Genre $_genre;
-    private array $_casting = [];
+    private array $_castings = [];
 
     public function __construct(string $titre, DateTime $dateSortie, int $duree, Realisateur $realisateur, Genre $genre, string $synopsis = '')
     {
@@ -32,7 +32,7 @@ class Film
         
     }
 
-    // Getters et Setters pour les propriétés
+    // Getters et Setters pour les propriétés 
 
     public function getTitre()
     {
@@ -94,16 +94,34 @@ class Film
         $this->_genre = $genre;
     }
 
-    public function getCasting()
+    public function getCastings()
     {
-        return $this->_casting;
+        return $this->_castings;
     }
 
-    public function setCasting(array $casting)
+    public function setCastings(array $castings)
     {
-        $this->_casting = $casting;
+        $this->_castings = $castings;
     }
 
-    // ... (ajoutez d'autres getters et setters au besoin)
+    
+
+   
+    public function afficherInfoFilm()
+    {
+        echo "<h2>Informations sur le film</h2>";
+        echo "<strong>Titre:</strong> " . $this->_titre . "<br>";
+        echo "<strong>Date de sortie:</strong> " . $this->_dateSortie->format('Y-m-d') . "<br>";
+        echo "<strong>Durée:</strong> " . $this->_duree . " minutes<br>";
+
+        echo "<strong>Réalisateur:</strong> " . $this->_realisateur->getNomComplet() . "<br>";
+        echo "<strong>Genre:</strong> " . $this->_genre->getNom() . "<br>";
+
+        echo "<strong>Synopsis:</strong> " . $this->_synopsis . "<br>";
+
+       
+    }
 }
+
 ?>
+

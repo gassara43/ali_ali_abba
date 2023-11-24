@@ -2,64 +2,67 @@
 
 class Personne
 {
-    protected string $_Nom;
-    protected string $_Prenom;
-    protected string $_Sexe;
-    protected string $_Naissance;
+    protected string $_nom;
+    protected string $_prenom;
+    protected string $_sexe;
+    protected DateTime $_dateNaissance;
 
-    public function __construct(string $Nom, string $Prenom, string $Sexe, string $Naissance)
+    // camelCase : nomDeLUtilisateur, meteoDuMoment
+    // PascalCase : Personne, ChoseAFaire, TrucDuMachin
+
+    public function __construct(string $nom, string $prenom, string $sexe, string $dateNaissanceString)
     {
-        $this->_Nom = $Nom;
-        $this->_Prenom = $Prenom;
-        $this->_Sexe = $Sexe;
-        $this->_Naissance = $Naissance;
+        $this->_nom = $nom;
+        $this->_prenom = $prenom;
+        $this->_sexe = $sexe;
+        $this->_dateNaissance = new DateTime($dateNaissanceString); // "2023-11-23"
     }
 
     // Getters
     public function getNom()
     {
-        return $this->_Nom;
+        return $this->_nom;
     }
 
     public function getPrenom()
     {
-        return $this->_Prenom;
+        return $this->_prenom;
     }
 
     public function getSexe()
     {
-        return $this->_Sexe;
+        return $this->_sexe;
     }
 
-    public function getNaissance()
+    public function getDateNaissance()
     {
-        return $this->_Naissance;
+        return $this->_dateNaissance;
     }
 
     public function getNomComplet()
     {
-        return $this->_Prenom . ' ' . $this->_Nom;
+        return $this->_prenom . ' ' . $this->_nom;
     }
 
     // Setters
     public function setNom(string $nom)
     {
-        $this->_Nom = $nom;
+        $this->_nom = $nom;
     }
 
     public function setPrenom(string $prenom)
     {
-        $this->_Prenom = $prenom;
+        $this->_prenom = $prenom;
     }
 
     public function setSexe(string $sexe)
     {
-        $this->_Sexe = $sexe;
+        $this->_sexe = $sexe;
     }
 
-    public function setNaissance(string $naissance)
+    public function setDateNaissance(string $datenaissanceString)
     {
-        $this->_Naissance = $naissance;
+        $this->_dateNaissance = new DateTime($datenaissanceString);
     }
 }
 ?>

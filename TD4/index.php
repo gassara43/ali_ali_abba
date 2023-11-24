@@ -14,7 +14,7 @@ ici acteur prend la personne incarné et le nom prenom sexe et date de naissance
 on peut pas afficher un objet avec echo sans utiliser __tosting() pour le faire simplement avec echo ,si non on est obligé d'utiliser
 les methodes avec (->) cette flèche pour accèder un element de la classe.
  */
- $acteur1 = new Acteur('Batman','Michael', 'Keaton', 'Homme', '1951-09-05');
+ $acteur1 = new Acteur('Batman','Michael', 'Keaton', 'Homme', '1951-09-05'); 
  $acteur2 = new Acteur('Batman','Val', 'Kilmer', 'Homme', '1959-12-31');
  $acteur3 = new Acteur('Batman','George', 'Cloony', 'Homme', '1961-05-06');
  echo "les acteurs ayant joué le role de ".$acteur1->getNomPersonnage()."<br>";
@@ -88,36 +88,39 @@ $georgeLucas = new Realisateur('Lucas', 'George', 'Homme', '1944-05-14');
 $starWars = new Film('Star Wars', new DateTime('1977-05-25'), 121, $georgeLucas, $aventureGenre);
 $indianaJones = new Film('Indiana Jones', new DateTime('1981-06-12'), 115, $georgeLucas, $aventureGenre);
 
-// Liste de la filmographie du réalisateur
-$filmographieRealisateur = $georgeLucas->listerFilmographie();
-
 // Affichage des films réalisés par le réalisateur
-echo 'La filmographie de ' . $georgeLucas->getNomComplet() . ' :<br>';
-foreach ($filmographieRealisateur as $titreFilm) {
-    echo $titreFilm . '<br>';
-}
+$filmographieRealisateur = $georgeLucas->afficherFilmographie();
+/*********************************************************************************************************** */
+
+// Créez des instances de films, acteurs, réalisateurs, genres, etc.
+
+// Créer un réalisateur
+$georgeLucas = new Realisateur('Lucas', 'George', 'Homme', '1944-05-14');
+
+// Créer un genre "Science-Fiction"
+$scienceFiction = new Genre('Science-Fiction');
+
+// Créer un film
+$starWars = new Film('Star Wars', new DateTime('1977-05-25'), 121, $georgeLucas, $scienceFiction, 'Une galaxie lointaine, très lointaine...');
 
 
+// Afficher les informations sur le film
+$starWars->afficherInfoFilm();
 
+/**********************************************************************************************************/
+//Créez un genre "Aventure"
+$aventureGenre = new Genre('Aventure');
 
+// Créez des films associés à ce genre
+$starWars = new Film('Star Wars', new DateTime('1977-05-25'), 121, $realisateur, $aventureGenre);
+$indianaJones = new Film('Indiana Jones', new DateTime('1981-06-12'), 115, $realisateur, $aventureGenre);
 
-
-
-
-
-
-
-
-
-/*$realisateur = new Realisateur('NomRealisateur', 'PrenomRealisateur', 'Homme', '1975-10-10');
-
-$genre = new Genre('Action');
-
-$film = new Film('TitreFilm', new DateTime('2022-01-01'), 120, $realisateur, $genre);
-
-$film->ajouterActeur($acteur1, 'Role1');
-$film->ajouterActeur($acteur2, 'Role2');
-
-// Utilisez les autres classes de la même manière
+// Affichage des films associés à ce genre
+$aventureGenre->afficherFilmsParGenre();
 ?>
-*/
+
+
+
+
+
+

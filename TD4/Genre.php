@@ -1,12 +1,12 @@
 <?php
 class Genre
 {
-    private string $_Nom;
+    private string $_nom;
     private array $_films = [];
 
     public function __construct(string $nom)
     {
-        $this->_Nom = $nom;
+        $this->_nom = $nom;
     }
 
     public function ajouterFilm(Film $film)
@@ -14,7 +14,7 @@ class Genre
         $this->_films[] = $film;
     }
 
-    public function listerFilmsParGenre()
+    public function getFilmsParGenre()
     {
         $filmsParGenre = [];
         foreach ($this->_films as $film) {
@@ -26,21 +26,23 @@ class Genre
     // Autre méthode ajoutée pour afficher les films associés à ce genre
     public function afficherFilmsParGenre()
     {
-        echo "Les films du genre " . $this->_Nom . " sont :<br>";
-        $films = $this->listerFilmsParGenre();
-        foreach ($films as $titreFilm) {
-            echo $titreFilm . '<br>';
+        echo "<h2>Films du genre " . $this->_nom . "</h2>";
+        echo "<ul>";
+        $titreFilms = $this->getFilmsParGenre();
+        foreach ($titreFilms as $titreFilm) {
+            echo "<li>" . $titreFilm . "</li>";
         }
+        echo "</ul>";
     }
 
     // Getters et Setters pour le nom du genre
     public function getNom()
     {
-        return $this->_Nom;
+        return $this->_nom;
     }
 
     public function setNom($nom)
     {
-        $this->_Nom = $nom;
+        $this->_nom = $nom;
     }
 }

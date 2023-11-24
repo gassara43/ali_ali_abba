@@ -14,7 +14,7 @@ class Realisateur extends Personne
         $this->_filmographie[] = $film;
     }
 
-    public function listerFilmographie()
+    public function getFilmographie()
     {
         $filmographie = [];
         foreach ($this->_filmographie as $film) {
@@ -22,5 +22,13 @@ class Realisateur extends Personne
         }
         return $filmographie;
     }
+
+    public function afficherFilmographie() {
+        echo 'La filmographie de ' . $this->getNomComplet() . ' :<br>';
+        $filmographieRealisateur = $this->getFilmographie();
+        foreach ($filmographieRealisateur as $titreFilm) {
+            echo $titreFilm . '<br>';
+        }
+    }
 }
-?>
+?> 

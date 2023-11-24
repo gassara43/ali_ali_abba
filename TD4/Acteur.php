@@ -36,4 +36,10 @@ class Acteur extends Personne
         $this->_NomPersonnageJouer = $personnage;
     }
 }
+
+/*
+    lister les infos d'un film (dont le réalisateur et le genre qui sont des objets)
+    lister les films d'un réalisateur particulier
+     lister les films d'un genre particulier
+*/
 ?>
